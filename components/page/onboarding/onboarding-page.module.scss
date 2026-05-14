@@ -1,0 +1,606 @@
+// Onboarding page — visual language mirrors the Overview page in
+// pln-directory-portal-v2/components/page/aligement-assets/overview/overview-page.tsx.
+// Primary CTA, blue-tinted cards, gradient-border cards, and 120px section
+// rhythm are lifted from that file's `<style jsx global>` block.
+
+// ---- Shell ----
+.shell {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--plaa-neutral-white);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1170px;
+  padding: 40px 16px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 56px 32px 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding: 72px 48px 160px;
+  }
+}
+
+// ---- Generic section helpers ----
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 100%;
+  color: var(--plaa-text-dark);
+  letter-spacing: -0.2px;
+}
+
+@media (min-width: 960px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+}
+
+.sectionLead {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+@media (min-width: 768px) {
+  .sectionLead {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+// ---- Hero ----
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heroHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--plaa-text-dark);
+  letter-spacing: -0.2px;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.heroLead {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .introGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.introCard {
+  display: flex;
+  align-items: center;
+  background: var(--plaa-neutral-slate-50);
+  border: 1px solid var(--plaa-border-blue-light);
+  border-radius: 12px;
+  padding: 24px;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--plaa-text-menu);
+  }
+}
+
+// ---- Primary CTA ----
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--plaa-neutral-slate-300);
+  background-color: var(--plaa-primary-blue);
+  color: var(--plaa-neutral-white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  box-shadow: var(--plaa-shadow-button);
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 120ms ease;
+
+  &:hover {
+    background-color: var(--plaa-primary-blue-hover);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+// ---- What to expect ----
+.expectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .expectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .expectGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.expectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: var(--plaa-neutral-white);
+  border: 1px solid var(--plaa-border-blue-light);
+  border-radius: 12px;
+  text-align: center;
+  min-height: 148px;
+  justify-content: center;
+}
+
+.expectCardTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+.expectCardBody {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+// ---- How section ----
+.howSection {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.howHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.howLead {
+  margin: 0;
+  max-width: 780px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+@media (min-width: 768px) {
+  .howLead {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.stepsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stepsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// Gradient-border card — uses the double-background technique from
+// pln-directory-portal-v2 (linear-gradient(white,white) padding-box,
+// linear-gradient(...) border-box).
+.stepCard {
+  position: relative;
+  min-height: 220px;
+  padding: 64px 24px 24px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--plaa-neutral-white), var(--plaa-neutral-white)) padding-box,
+    var(--plaa-gradient-blue-green) border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+// Pentagonal number badge (anchored top-left, flush against card edge)
+.stepBadgeNumber {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 35px;
+  height: 43px;
+  background: var(--plaa-gradient-blue-green-solid);
+  color: var(--plaa-neutral-white);
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+  z-index: 2;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.stepTagBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: var(--plaa-brand-tint);
+  color: var(--plaa-brand-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.stepBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  color: var(--plaa-text-dark);
+}
+
+.stepText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--plaa-text-menu);
+}
+
+.stepsPill {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--plaa-neutral-white), var(--plaa-neutral-white)) padding-box,
+    var(--plaa-gradient-blue-green) border-box;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--plaa-text-dark);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stepsPill {
+    font-size: 16px;
+  }
+}
+
+// ---- Recommended next step + Important details ----
+// Mobile: single column, natural flow.
+// Desktop (≥1024px): two-column grid where the gradient card and details card
+// share row 2 (so they stretch to the same height and their bottoms align).
+.recommendedSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .recommendedSection {
+    grid-template-columns: minmax(0, 1fr) 385px;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .recommendedTitle {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .recommendedCard {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .detailsCard {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .recommendedCallout {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+// Gradient-border card (re-used for Recommended + Details)
+.gradientCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--plaa-neutral-white), var(--plaa-neutral-white)) padding-box,
+    var(--plaa-gradient-blue-green) border-box;
+}
+
+@media (min-width: 768px) {
+  .gradientCard {
+    padding: 30px;
+  }
+}
+
+.recommendedBadge {
+  align-self: flex-start;
+  padding: 2px 8px;
+  background: var(--plaa-brand-tint);
+  color: var(--plaa-brand-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  border-radius: 9999px;
+}
+
+.gradientTitle,
+.gradientTitleDark {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 39px;
+  background: var(--plaa-gradient-blue-green-solid);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradientTitleDark {
+  background: var(--plaa-gradient-dark-green-solid);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.cardBody {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+.cardBodyItalic {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 20px;
+  color: var(--plaa-text-menu);
+}
+
+.infoCallout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--plaa-neutral-slate-50);
+  border: 1px solid var(--plaa-border-blue-light);
+  border-radius: 8px;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--plaa-text-menu);
+  }
+
+  a {
+    color: var(--plaa-primary-blue);
+    text-decoration: underline;
+  }
+}
+
+.infoIcon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--plaa-primary-blue);
+  color: var(--plaa-neutral-white);
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Times New Roman', serif;
+  margin-top: 1px;
+}
+
+.detailsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--plaa-neutral-white), var(--plaa-neutral-white)) padding-box,
+    var(--plaa-gradient-blue-green) border-box;
+}
+
+.detailsList {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--plaa-text-menu);
+  }
+}
+
+.inlineLink {
+  color: var(--plaa-primary-blue);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+// ---- Ready section ----
+.readySection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.readyHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+// ---- Support footer ----
+.support {
+  position: relative;
+  padding: 24px 16px;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(241, 245, 249, 0) 0%,
+    #fafcff 50%,
+    rgba(241, 245, 249, 0) 100%
+  );
+  border-top: 1px solid var(--plaa-border-light);
+  border-bottom: 1px solid var(--plaa-border-light);
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--plaa-text-menu);
+  }
+
+  strong {
+    color: var(--plaa-text-dark);
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 768px) {
+  .support p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
