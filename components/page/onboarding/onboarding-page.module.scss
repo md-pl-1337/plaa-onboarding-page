@@ -4,18 +4,26 @@
 // rhythm are lifted from that file's `<style jsx global>` block.
 
 // ---- Shell ----
+// `--app-header-height` is defined in pln-directory-portal-v2's global tokens
+// (56px mobile, 80px tablet+). When this page is dropped into that repo, the
+// navbar's height is subtracted so the page fills the remaining viewport
+// without overflowing. In the standalone preview repo the variable is
+// undefined and the fallback `0px` keeps full-height behaviour.
 .shell {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--app-header-height, 0px));
   background: var(--plaa-neutral-white);
   display: flex;
   justify-content: center;
 }
 
+// Mirrors `.plaa__content` from pln-directory-portal-v2:
+// mobile 24px / 16px, desktop (≥960px) 20px / 48px / 225px / 48px.
+// Bottom padding is generous so the floating CTA (in the host repo) has room.
 .inner {
   width: 100%;
   max-width: 1170px;
-  padding: 40px 16px 96px;
+  padding: 24px 16px 96px;
   display: flex;
   flex-direction: column;
   gap: 120px;
@@ -23,13 +31,13 @@
 
 @media (min-width: 768px) {
   .inner {
-    padding: 56px 32px 120px;
+    padding: 24px 32px 120px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .inner {
-    padding: 72px 48px 160px;
+    padding: 20px 48px 225px;
   }
 }
 
